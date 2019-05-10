@@ -31,3 +31,17 @@
     transform: rotate(360deg);
   }
 }
+.rooms{
+  border:solid black 2px;
+}
+table{
+  background-color: black;
+}
+.rooms-row{
+
+}
+
+.rooms-data{
+  background-color: green;
+  border: solid red 1px;
+}
