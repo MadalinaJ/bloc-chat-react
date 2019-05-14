@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black;
+  color: orange;
 }
 
 .App-logo {
@@ -31,17 +33,17 @@
     transform: rotate(360deg);
   }
 }
-.rooms{
-  border:solid black 2px;
+table {
+  border: solid green 2px;
 }
-table{
-  background-color: black;
+.bt-create-room{
+  background-color:orange;
 }
-.rooms-row{
+.new-room-form-open{
+  position: relative;
 
 }
+#newRoomForm{
+background-color: white;
 
-.rooms-data{
-  background-color: green;
-  border: solid red 1px;
 }
