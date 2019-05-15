@@ -5,6 +5,8 @@ class RoomList extends Component {
     super(props);
       this.state = {
         rooms: [],
+        name: '',
+        showFormForNewRoom: false,
       }
       this.roomsRef = this.props.firebase.database().ref('rooms');
       this.handleChange = this.handleChange.bind(this);
@@ -68,6 +70,11 @@ class RoomList extends Component {
             <h3>Create a new room </h3>
            <input type="text" id="newRoomName" name="newRoomName" placeholder="Enter room name..."
                onChange={ this.handleChange }value={this.state.name}></input>
+
+          <div className='cancel-name-room'>
+               <input type="button" id="cancel" name="cancel" value="Cancel" onClick={ () => this.handleFormRoomChangeOnPage() }></input>
+          </div>
+
            <div className="bt-create-room">
              <input type="button" id="submit" name="submit" value="Create Room" onClick={ () => this.createRoom(this.state.name)}></input>
            </div>
@@ -95,7 +102,7 @@ class RoomList extends Component {
               {
                 this.state.rooms.map((room, index) =>
                   <tr className="rooms-row" key={index}>
-                    <td className="rooms-data">Room {index +1}</td>
+                    <td className="rooms-data">{room.name}</td>
                   </tr>
                 )
               }
