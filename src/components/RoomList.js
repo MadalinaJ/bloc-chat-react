@@ -27,7 +27,7 @@ class RoomList extends Component {
       this.roomsRef.push({
         name: newRoomName
       });
-      this.setState({name: newRoomName});
+      this.setState({name: ''});
       this.setState({ showFormForNewRoom: false });
     }
 
