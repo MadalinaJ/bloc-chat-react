@@ -26,14 +26,12 @@ class MessageList extends Component {
           <table className="messages">
           <tbody>
           {
-            this.state.messages.filter((message) => this.props.setRoom.key === message.roomID)
+            this.state.messages.filter((message) => this.props.setRoom.key === message.roomId)
              .map((message, index) =>
-             <tr key={index}>
-        <td>
-             {message.content}
-             {message.sentAt}
-             {message.username}
-        </td>
+             <tr className="message-data" key={index}>
+        <td className="msg-user">{message.username}</td>
+        <td className="msg-content">{message.content}</td>
+        <td className="timestamp">{message.sentAt}</td>
        </tr>)
         }
 
