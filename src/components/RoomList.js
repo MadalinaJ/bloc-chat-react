@@ -93,22 +93,22 @@ class RoomList extends Component {
     return (
        <section className="RoomList">
        <div className="rooms">
-              <h2 className="header">Bloc Chat</h2>
+          <h2 className="header">Bloc Chat</h2>
 
-              <button className="new-room" onClick={ () => this.handleFormRoomChangeOnPage()}> { this.handleButtonForRoomChange() }</button>
-              <div className="new-room-form-open">{this.showForm()}</div>
-              <table>
-              <tbody>
-              {
-                this.state.rooms.map((room, index) =>
-                  <tr className="rooms-row" key={index}>
-                    <td className="rooms-data">{room.name}</td>
-                  </tr>
-                )
-              }
-            </tbody>
-            </table>
-        </div>
+          <button className="new-room" onClick={ () => this.handleFormRoomChangeOnPage()}> { this.handleButtonForRoomChange() }</button>
+          <div className="new-room-form-open">{this.showForm()}</div>
+          <table>
+          <tbody>
+            {
+              this.state.rooms.map((room, index) =>
+              <tr className="rooms-row" key={index}>
+                <td className="rooms-data" onClick={() => this.props.setRoom(room)}>{room.name}</td>
+              </tr>
+              )
+            }
+          </tbody>
+          </table>
+       </div>
        </section>
     );
   }

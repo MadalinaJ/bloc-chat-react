@@ -45,5 +45,12 @@ table {
 }
 #newRoomForm{
 background-color: white;
+}
 
+.MessageList {
+  border: solid green 2px;
+}
+.messages {
+  width:100%;
+  border-collapse: collapse;
 }
