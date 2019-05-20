@@ -34,12 +34,14 @@ this.setState({activeRoom:room});
     return (
 
     <div className="App">
-    <RoomList firebase={firebase}
+    <RoomList
+    firebase={firebase}
     setRoom={this.setRoom.bind(this)}
     />
 
     <div className="messageL">
-      <MessageList firebase={firebase}
+      <MessageList
+      firebase={firebase}
       setRoom={this.state.activeRoom}
       />
     </div>
