@@ -52,10 +52,16 @@ background-color: white;
 }
 .messages {
   width:100%;
-
   border-collapse: collapse;
 }
 
 tbody {
   color: orange;
+}
+
+.messageL {
+  background-color: black;
+  color: green;
+  height: 600px;
+
 }
