@@ -25,7 +25,7 @@ class User extends Component {
     this.setState({user: e.target.value});
   }
 
-  displayUsername(){
+  displayName(){
   if(this.props.user){
     return(
       <span>{this.props.user}</span>
@@ -35,14 +35,14 @@ class User extends Component {
 
   render(){
     return(
+
       <div className='User'>
+       <div className="displayUsername">{ this.props.user ? this.props.user.displayName : 'Guest'}</div>
+        <button onClick={ this.props.user ? this.signOut.bind(this) : this.signIn.bind(this) }>
+           <span>Sign { this.props.user ? 'out' : 'in' }</span>
+        </button>
+       </div>
 
-      <span className='displayUsername'>{this.props.user ? this.props.user.displayUsername:'Guest'}</span>
-      <button onClick={this.signIn.bind(this)}>Sign in</button>
-      <button onClick={this.signOut.bind(this)}>Sign out</button>
-
-
-      </div>
     )
   }
 }

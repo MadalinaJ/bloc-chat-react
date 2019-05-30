@@ -25,7 +25,7 @@ class App extends Component {
 
     this.state = {
         activeRoom: '',
-        user:'',
+        user:null,
     }
   }
 

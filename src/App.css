@@ -69,8 +69,19 @@ tbody {
   height: 600px;
 text-align: center;
 }
+.User{
+  display: block;
+  position: relative;
+  text-align: center;
+
+}
 .displayUsername{
   display: block;
   position: relative;
   text-align: center;
+  
+}
+.pop-up{
+  background-color: purple;
+
 }
