@@ -49,10 +49,14 @@ background-color: white;
 
 .MessageList {
   border: solid green 2px;
+ text-align: center;
+
 }
 .messages {
   width:100%;
   border-collapse: collapse;
+  text-align: center;
+
 }
 
 tbody {
@@ -63,5 +67,10 @@ tbody {
   background-color: black;
   color: green;
   height: 600px;
-
+text-align: center;
+}
+.displayUsername{
+  display: block;
+  position: relative;
+  text-align: center;
 }

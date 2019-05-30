@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
+import User from './components/User';
 import './App.css';
 import * as firebase from 'firebase';
 
@@ -16,6 +17,7 @@ var firebaseConfig = {
   };
 
   firebase.initializeApp(firebaseConfig);
+  var provider = new firebase.auth.GoogleAuthProvider();
 
 class App extends Component {
   constructor(props){
@@ -23,6 +25,7 @@ class App extends Component {
 
     this.state = {
         activeRoom: '',
+        user:'',
     }
   }
 
@@ -30,10 +33,20 @@ class App extends Component {
 this.setState({activeRoom:room});
   }
 
+  setUser(user){
+    this.setState({ user: user });
+  }
+
   render() {
     return (
 
     <div className="App">
+
+    <User
+    firebase={firebase}
+    user={this.state.user}
+    setUser={ (user) => this.setUser(user)}/>
+
     <RoomList
     firebase={firebase}
     setRoom={this.setRoom.bind(this)}
