@@ -56,6 +56,7 @@ this.setState({activeRoom:room});
       <MessageList
       firebase={firebase}
       setRoom={this.state.activeRoom}
+      user={this.state.user}
       />
     </div>
   </div>

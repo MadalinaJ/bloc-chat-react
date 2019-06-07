@@ -98,7 +98,7 @@ class RoomList extends Component {
           <button className="new-room" onClick={ () => this.handleFormRoomChangeOnPage()}> { this.handleButtonForRoomChange() }</button>
           <div className="new-room-form-open">{this.showForm()}</div>
           <table>
-          <tbody>
+          <tbody className="table-rooms">
             {
               this.state.rooms.map((room, index) =>
               <tr className="rooms-row" key={index}>

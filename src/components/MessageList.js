@@ -6,20 +6,52 @@ class MessageList extends Component {
     super(props);
       this.state = {
         messages: [],
-        username: "",
-        content: "",
-        sentAt: "",
-        roomId: ""
+        username: " ",
+        content: " ",
+        sentAt: " ",
+        roomId: " ",
       }
-      this.roomsRef = this.props.firebase.database().ref('messages');
+      this.messageRef = this.props.firebase.database().ref('messages');
   }
 
   componentDidMount() {
-     this.roomsRef.on('child_added', snapshot => {
+     this.messageRef.on('child_added', snapshot => {
        const message = snapshot.val();
        message.key = snapshot.key;
        this.setState({ messages: this.state.messages.concat( message ) })
      });
+   }
+   showMessageForm(){
+    if(!this.props.setRoom.key == ''){
+    return(
+      <form id="newMessageForm">
+              <input className="message-field"
+              type="text" id="newMessage" name="newMessage"
+              onChange={ this.handleChange.bind(this) }
+               value={this.state.content}></input>
+
+              <input className="send" type="button" id="send" name="submit" value="Send"
+               onClick={ () => this.createMessage(this.state.content)}></input>
+      </form>
+    )}else{
+       return(
+         <h3 className="choose-room-toChat">For chat please select one of the rooms </h3>
+       )
+    }
+  }
+
+
+  handleChange(e){
+    this.setState({content: e.target.value});
+  }
+   createMessage(newMessage) {
+     this.messageRef.push({
+      content: this.state.content,
+      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
+      roomID: this.props.setRoom.key,
+      username: this.props.user ? this.props.user.displayName : "Guest",
+    });
+     this.setState({content: ' '});
    }
 
     render() {
@@ -40,6 +72,7 @@ class MessageList extends Component {
 
           </tbody>
           </table>
+          {this.showMessageForm()}
         </section>
       )
     }

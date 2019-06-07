@@ -4,7 +4,7 @@ class User extends Component {
   constructor(props){
     super(props);
     this.state={
-
+      
     }
     this.roomsRef = this.props.firebase.database().ref('rooms');
   }

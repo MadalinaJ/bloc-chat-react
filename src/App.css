@@ -34,24 +34,22 @@
   }
 }
 table {
-  border: solid green 2px;
+
 }
 .bt-create-room{
   background-color:orange;
 }
 .new-room-form-open{
   position: relative;
-
+ border-color: black;
+ background-color: blue;
 }
+
 #newRoomForm{
 background-color: white;
 }
 
-.MessageList {
-  border: solid green 2px;
- text-align: center;
 
-}
 .messages {
   width:100%;
   border-collapse: collapse;
@@ -63,25 +61,97 @@ tbody {
   color: orange;
 }
 
+.table-rooms{
+
+  position: fixed;
+  margin-left: 1%
+
+
+}
+.rooms-row:hover{
+
+  background-color: white;
+  color: black;
+  cursor: pointer;
+
+
+}
+.MessageList {
+position: absolute;
+margin-left: 10%;;
+width: 85%;
+  border: solid green 2px;
+  text-align: center;
+
+
+}
 .messageL {
   background-color: black;
   color: green;
-  height: 600px;
-text-align: center;
+  height: 700px;
+  text-align: center;
+
 }
+
 .User{
   display: block;
   position: relative;
   text-align: center;
+
 
 }
 .displayUsername{
   display: block;
   position: relative;
   text-align: center;
-  
-}
-.pop-up{
-  background-color: purple;
 
+}
+
+.msg-user{
+
+  display: flex;
+}
+.msg-content{
+  display:flex;
+  margin-left: 10%;
+  background: orange;
+  border-radius: 5px;
+  color: black;
+  width: 55%;
+  height: 20%;
+}
+.timestamp{
+  display:flex;
+  float: right;
+  margin-top: -3%;
+}
+
+#newMessageForm{
+  height: 50px;
+}
+.message-field{
+  display: flex;
+  width: 55%;
+  margin-top: 5%;
+  margin-left: 10%;
+
+}
+
+.send{
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 10%;
+}
+.choose-room-toChat{
+  display: flex;
+  color:green;
+  font-size: 10px;
+ width: 250px;
+  text-align:center;
+  padding-top: 10px;
+
+}
+.MessageList>h3{
+  display: flex;
+  margin-left: 10%;
 }
