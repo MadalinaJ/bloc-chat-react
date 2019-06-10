@@ -9,7 +9,7 @@ class MessageList extends Component {
         username: " ",
         content: " ",
         sentAt: " ",
-        roomId: " ",
+        roomID: " ",
       }
       this.messageRef = this.props.firebase.database().ref('messages');
   }
@@ -27,7 +27,8 @@ class MessageList extends Component {
       <form id="newMessageForm">
               <input className="message-field"
               type="text" id="newMessage" name="newMessage"
-              onChange={ this.handleChange.bind(this) }
+              onChange={ this.handleChange.bind(this)}
+              placeholder="write message here"
                value={this.state.content}></input>
 
               <input className="send" type="button" id="send" name="submit" value="Send"
@@ -35,7 +36,7 @@ class MessageList extends Component {
       </form>
     )}else{
        return(
-         <h3 className="choose-room-toChat">For chat please select one of the rooms </h3>
+         <h3 className="choose-room-toChat">Please select one of the rooms </h3>
        )
     }
   }
@@ -54,19 +55,28 @@ class MessageList extends Component {
      this.setState({content: ' '});
    }
 
+   convertTime(timestamp){
+		const date = new Date(timestamp);
+		let hour = date.getHours()%12 === 0 ? 12 : date.getHours()%12,
+			min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes(),
+			am = date.getHours() < 12 ? 'am' : 'pm';
+
+		return hour + ':' + min + ' ' + am;
+	}
+
     render() {
       return(
         <section className="MessageList">
-        <h3>{this.props.setRoom.name}</h3>
+        <h3 className='active-room'>{this.props.setRoom.name}</h3>
           <table className="messages">
           <tbody>
           {
-            this.state.messages.filter((message) => this.props.setRoom.key === message.roomId)
+            this.state.messages.filter((message) => this.props.setRoom.key === message.roomID)
              .map((message, index) =>
              <tr className="message-data" key={index}>
         <td className="msg-user">{message.username}</td>
         <td className="msg-content">{message.content}</td>
-        <td className="timestamp">{message.sentAt}</td>
+        <td className="timestamp">{this.convertTime(message.sentAt)}</td>
        </tr>)
         }
 
@@ -78,5 +88,4 @@ class MessageList extends Component {
     }
 
 }
-
 export default MessageList;

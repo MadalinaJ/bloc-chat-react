@@ -1,157 +1,284 @@
-.App {
-  text-align: center;
-  background-color: black;
-  color: orange;
+.RoomList{
+  outline: none!important;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+  background: rgb(127, 92, 120);
+  z-index: 2;
+}
+@media(min-width: 768px){
+  .navbar{
+    height: 100vh;
+    padding-left: 30px!important;
+    text-align:left;
+}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-table {
-
-}
-.bt-create-room{
-  background-color:orange;
-}
-.new-room-form-open{
-  position: relative;
- border-color: black;
- background-color: blue;
-}
-
-#newRoomForm{
-background-color: white;
-}
-
-
-.messages {
-  width:100%;
-  border-collapse: collapse;
-  text-align: center;
-
-}
-
-tbody {
-  color: orange;
+.nav-header{
+  font-size: 28px;
+  font-family:  sans-serif;
+  color: rgba(216, 217, 218, 0.9)/*rgb(12, 156, 181)#4b4a4a*/;
+  margin-left: -2px;
 }
 
 .table-rooms{
+  padding-bottom: 15px;
+  margin-left: -10px;
+}
 
-  position: fixed;
-  margin-left: 1%
-
+.room{
+  padding-bottom: 12px;
+  font-size: 15px;
+  color: rgb(74, 75, 75);
+  font-weight: bold;
 
 }
-.rooms-row:hover{
-
-  background-color: white;
-  color: black;
+.room:hover{
+  background-color: rgb(133, 105, 140);
   cursor: pointer;
-
-
 }
-.MessageList {
-position: absolute;
-margin-left: 10%;;
-width: 85%;
-  border: solid green 2px;
-  text-align: center;
-
-
-}
-.messageL {
-  background-color: black;
-  color: green;
-  height: 700px;
-  text-align: center;
-
+.rooms{
+  padding: 30px 0 0 0;
+  color: #979797;
 }
 
-.User{
-  display: block;
+.new-room{
+  position: absolute;
+  margin-top: 600px;
+  margin-right: 0px;
+  padding: 5px ;
+  border-radius: 4px;
+  font-size: 14px;
+  background:rgb(133, 105, 140);
+  color:  #c7c2c2;
+  outline: none;
+}
+.new-room:hover{
+  background-color: rgb(116, 109, 117);
+}
+@media(min-width: 768px){
+  .new-room{
+    margin-right: 0;
+}
+}
+
+
+#newRoomForm{
+  position: fixed;
+  top: 20%;
+  left: 15%;
+  width: 70%;
+  background:rgb(127, 92, 120);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
+}
+@media(min-width:576px){
+  #newRoomForm{
+    left: 20%;
+    width: 60%;
+  }
+}
+@media(min-width:768px){
+  #newRoomForm{
+    left: 35%;
+    width: 30%;
+  }
+}
+@media(min-width:1200px){
+  #newRoomForm{
+    top: 30%;
+    left: 40%;
+    width: 20%;
+  }
+}
+
+#newRoomName{
+  width:100%;
+}
+
+#cancel{
+  width:100%;
+}
+
+#submit{
+  width:100%;
+}
+
+.textbox{
+  height: 25px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,.25);
+  padding: 0 3px;
+  margin-bottom:15px;
+  outline: none;
+}
+
+.title-newRoom{
+  color: #4b4a4a;
+}
+
+.cancel{
+  background:#4b4a4a;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 3px 10px;
+  font-size: 14px;
+  transition: all .2s ease;
+  outline: none;
+}
+.cancel:hover{
+  opacity: .9;
+}
+
+.submit{
+  background:#fff;
+  color: #4b4a4a;
+  border: none;
+  border-radius: 2px;
+  padding: 3px 10px;
+  font-size: 14px;
+  transition: all .2s ease;
+  outline: none;
+}
+.submit:hover{
+  opacity: .9;
+}
+
+
+.messageList{
   position: relative;
-  text-align: center;
-
 
 }
-.displayUsername{
-  display: block;
-  position: relative;
-  text-align: center;
 
+.active-room{
+  color: #4a4a4c;
+}
+
+.messages{
+  width:100%;
+  border-collapse: collapse;
+}
+
+tbody:nth-child(odd) .message-data:nth-child(odd){
+  background: #f6f7fb;
+}
+tbody:nth-child(even) .message-data{
+  background: white;
+}
+
+td {
+  border-spacing: none;
+  padding: 10px;
+  color: #4a4a4a;
 }
 
 .msg-user{
+  font-weight: bold;
+  line-height: 25px;
+}
 
-  display: flex;
-}
-.msg-content{
-  display:flex;
-  margin-left: 10%;
-  background: orange;
-  border-radius: 5px;
-  color: black;
-  width: 55%;
-  height: 20%;
-}
 .timestamp{
-  display:flex;
-  float: right;
-  margin-top: -3%;
+  text-align: right;
+}
+
+
+.nav{
+  position: fixed;
+  height: auto;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index: 3;
+}
+
+.User{
+  width: 100%;
+  background: #4b4a4a;
+  padding: 5px;
+  position: relative;
+}
+
+.log-in-out{
+  padding: 0 15px;
+  color: #fff;
+
+}
+
+.displayUsername{
+  text-align:right;
+  font-weight: bold;
+  color: rgb(172, 147, 179);
+}
+
+.log-in{
+  background:rgb(133, 105, 140);
+  color: #c7c2c2;
+  border: none;
+  border-radius: 2px;
+  padding: 3px 10px;
+  font-size: 11px;
+  outline: none;
+  margin-left:94%;
+  position: relative;
+}
+.log-in:hover{
+  opacity: 0.8;
+  background-color: rgb(222, 216, 222);
+  color: rgb(133, 105, 140);
 }
 
 #newMessageForm{
-  height: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+@media(min-width: 768px){
+#newMessageForm{
+  width: 76%;
+}
 }
 .message-field{
-  display: flex;
-  width: 55%;
-  margin-top: 5%;
-  margin-left: 10%;
-
+  width:80%;
+  height: 40px;
+  padding: 5px 15px;
+  font-size: 16px;
+  overflow:hidden;
+  border: solid 1px #dedede;
+  background-color: #f6f7fb;
+  outline: none;
+}
+@media(min-width: 768px){
+.message-field{
+  width:85%;
+  padding: 5px 30px;
+}
 }
 
 .send{
-  position: absolute;
-  margin-top: 1%;
-  margin-left: 10%;
+  width: 20%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  background: rgb(127, 92, 120);
+  color: #fff;
+  position: relative;
+  font-size: 16px;
+  outline: none;
 }
-.choose-room-toChat{
-  display: flex;
-  color:green;
-  font-size: 10px;
- width: 250px;
-  text-align:center;
-  padding-top: 10px;
+@media(min-width: 768px){
+.send{
+  width: 15%;
+}
+}
 
-}
-.MessageList>h3{
-  display: flex;
-  margin-left: 10%;
+.choose-room-toChat{
+  text-align: center;
+  padding-top: 15%;
+  color: rgb(127, 92, 120);
 }

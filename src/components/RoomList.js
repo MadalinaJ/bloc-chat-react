@@ -67,8 +67,8 @@ class RoomList extends Component {
       if(this.state.showFormForNewRoom){
         return (
           <form id="newRoomForm">
-            <h3>Create a new room </h3>
-           <input type="text" id="newRoomName" name="newRoomName" placeholder="Enter room name..."
+            <h3 className="title-newRoom">Create a new room </h3>
+           <input type="textbox" id="newRoomName" name="newRoomName" placeholder="Enter room name..."
                onChange={ this.handleChange }value={this.state.name}></input>
 
           <div className='cancel-name-room'>
@@ -93,16 +93,16 @@ class RoomList extends Component {
     return (
        <section className="RoomList">
        <div className="rooms">
-          <h2 className="header">Bloc Chat</h2>
+          <h2 className="nav-header">Bloc Chat</h2>
 
           <button className="new-room" onClick={ () => this.handleFormRoomChangeOnPage()}> { this.handleButtonForRoomChange() }</button>
           <div className="new-room-form-open">{this.showForm()}</div>
-          <table>
-          <tbody className="table-rooms">
+          <table className="table-rooms">
+          <tbody >
             {
               this.state.rooms.map((room, index) =>
-              <tr className="rooms-row" key={index}>
-                <td className="rooms-data" onClick={() => this.props.setRoom(room)}>{room.name}</td>
+              <tr className="rooms" key={index}>
+                <td className="room" onClick={() => this.props.setRoom(room)}>{room.name}</td>
               </tr>
               )
             }
@@ -113,6 +113,7 @@ class RoomList extends Component {
     );
   }
 }
+
 
 
 export default RoomList;

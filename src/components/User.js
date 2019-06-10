@@ -4,7 +4,7 @@ class User extends Component {
   constructor(props){
     super(props);
     this.state={
-      
+
     }
     this.roomsRef = this.props.firebase.database().ref('rooms');
   }
@@ -38,7 +38,7 @@ class User extends Component {
 
       <div className='User'>
        <div className="displayUsername">{ this.props.user ? this.props.user.displayName : 'Guest'}</div>
-        <button onClick={ this.props.user ? this.signOut.bind(this) : this.signIn.bind(this) }>
+        <button className="log-in" onClick={ this.props.user ? this.signOut.bind(this) : this.signIn.bind(this) }>
            <span>Sign { this.props.user ? 'out' : 'in' }</span>
         </button>
        </div>
