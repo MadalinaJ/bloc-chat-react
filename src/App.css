@@ -119,6 +119,13 @@
   color: #4b4a4a;
 }
 
+.delete-room{
+opacity: 0.7;
+}
+.delete-room:hover{
+opacity: 0.9;
+}
+
 .cancel{
   background:#4b4a4a;
   color: #fff;
@@ -151,10 +158,6 @@
 .messageList{
   position: relative;
 
-}
-
-.active-room{
-  color: #4a4a4c;
 }
 
 .messages{

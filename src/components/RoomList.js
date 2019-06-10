@@ -18,7 +18,15 @@ class RoomList extends Component {
         room.key = snapshot.key;
            this.setState({ rooms: this.state.rooms.concat( room ) })
       });
+      this.roomsRef.on('child_removed', snapshot => {
+       this.setState({ rooms: this.state.rooms.filter( room => room.key !== snapshot.key) })
+     });
     }
+
+  deleteRoom(room){
+    this.roomsRef.child(room.key).remove()
+  }
+
 
     handleChange(e){
       this.setState({name: e.target.value});
@@ -34,7 +42,6 @@ class RoomList extends Component {
 
     formRoomOpen(){
       this.setState({ showFormForNewRoom:true });
-
 
     }
 
@@ -63,6 +70,7 @@ class RoomList extends Component {
      }
     }
 
+
     showForm(){
       if(this.state.showFormForNewRoom){
         return (
@@ -89,13 +97,16 @@ class RoomList extends Component {
 
 
 
+
     render() {
     return (
        <section className="RoomList">
        <div className="rooms">
           <h2 className="nav-header">Bloc Chat</h2>
 
-          <button className="new-room" onClick={ () => this.handleFormRoomChangeOnPage()}> { this.handleButtonForRoomChange() }</button>
+          <button className="new-room" onClick={ () => this.handleFormRoomChangeOnPage()}>
+            { this.handleButtonForRoomChange() }</button>
+
           <div className="new-room-form-open">{this.showForm()}</div>
           <table className="table-rooms">
           <tbody >
@@ -103,12 +114,15 @@ class RoomList extends Component {
               this.state.rooms.map((room, index) =>
               <tr className="rooms" key={index}>
                 <td className="room" onClick={() => this.props.setRoom(room)}>{room.name}</td>
+                <td className='delete-room'><button onClick={() => this.deleteRoom(room)}>delete room</button></td>
               </tr>
               )
             }
+
           </tbody>
           </table>
        </div>
+
        </section>
     );
   }
