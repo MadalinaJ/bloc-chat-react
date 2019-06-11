@@ -4,6 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Project screenshots
+
+
+![chat-room page fullscreen](https://github.com/MadalinaJ/bloc-jams-react/tree/master/src/Screen Shot 2019-06-11 at 2.28.05 AM.png)
+
+![create-room page fullscreen](https://github.com/MadalinaJ/bloc-jams-react/tree/master/src/Screen Shot 2019-06-11 at 2.34.52 AM.png)
+
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
