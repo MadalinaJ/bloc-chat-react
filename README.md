@@ -7,9 +7,9 @@ In the project directory, you can run:
 ## Project screenshots
 
 
-![chat-room page fullscreen](https://github.com/MadalinaJ/bloc-jams-react/tree/master/src/Screen Shot 2019-06-11 at 2.28.05 AM.png)
+![chat-room page fullscreen](https://github.com/MadalinaJ/bloc-chat-react/blob/master/src/Screen%20Shot%202019-06-11%20at%202.28.05%20AM.png)
 
-![create-room page fullscreen](https://github.com/MadalinaJ/bloc-jams-react/tree/master/src/Screen Shot 2019-06-11 at 2.34.52 AM.png)
+![create-room page fullscreen](https://github.com/MadalinaJ/bloc-chat-react/blob/master/src/Screen%20Shot%202019-06-11%20at%202.34.52%20AM.png)
 
 
 ### `npm start`
